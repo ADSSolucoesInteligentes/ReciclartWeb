@@ -1,0 +1,36 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+body::-webkit-scrollbar {
+    width: 0px; 
+    height: 0px;              /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #9DBCD4;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+  }
+.contentLeft{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.contentRight{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+#logo{
+    width: 150px;
+    margin: 10px;
+    float: left;
+}
+#logoE{
+    width: 100px;
+    margin: 10px;
+    float: right;
+}

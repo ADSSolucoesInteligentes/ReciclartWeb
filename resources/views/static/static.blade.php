@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/customStatic.css">
     <script src="ja/jquery-3.60.min.js"></script>
     <script src="js/materialize.min.js"></script>
-    <title>Reciclart</title>
+    <title>ReciclArt</title>
 </head>
 <body>
 <nav id="navBar">
@@ -17,10 +17,10 @@
           <img id="imgLogo" src="./img/logoReciclart.png" alt="">
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Home</a></li>
-        <li><a href="badges.html">Sobre nós</a></li>
-        <li><a href="collapsible.html">Criar conta</a></li>
-        <li><a href="collapsible.html">Login</a></li>
+        <li><a href="">Home</a></li>
+        <li><a href="">Sobre nós</a></li>
+        <li><a href="">Criar conta</a></li>
+        <li><a href="{{route('login')}}">Login</a></li>
       </ul>
     </div>
 </nav>
