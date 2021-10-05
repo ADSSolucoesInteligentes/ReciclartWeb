@@ -1,0 +1,74 @@
+.conteiner10080{
+    width: 100%;
+    height: 80%;
+}
+.midleLeft{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.midleRight{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+#midleR1{
+    background-image: url('./../img/lixeiraImg.jfif');
+    background-size: 100% 100%;
+}
+#midleL1, #midleL2, #midleR2, #container3, #midleL3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#midleL1 h3{
+    color: teal;
+    font-weight: 300;
+    
+}
+#container2{
+    background-image: url('./../img/bg-relato-gray.png');
+    background-size: 100% 100%;
+}
+#midleL2 img{
+    width: 60%;
+    border-radius: 20px;
+}
+#midleR2{
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px black;
+}
+#container3{
+    text-align: center;
+}
+#container3 h4{
+    font-weight: bolder;
+}
+.row{
+    width: 70%;
+}
+.card-image img{
+    height: 200px;
+}
+.card-image .card-title{
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+}
+#midleR3{
+    background-image: url('./../img/app.jfif');
+    background-size: 100% 100%;
+}
+#midleL3{
+    background-color: #C4C4C4;
+    text-align: center;
+}
+#midleL3 h4{
+    color: #003F22;
+    font-weight: bolder;
+}
+#midleL3 p{
+    font-size: 30px;
+    font-weight: lighter;
+}

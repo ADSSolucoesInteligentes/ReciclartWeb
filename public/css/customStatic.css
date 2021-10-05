@@ -1,0 +1,24 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+#imgLogo{
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+#navBar{
+    background-color: #004d40;
+}
+body::-webkit-scrollbar {
+    width: 0px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #9DBCD4;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+  }
