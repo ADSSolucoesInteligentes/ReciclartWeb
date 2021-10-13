@@ -15,5 +15,9 @@ class HomeController extends Controller
         return View('login');
     }
 
+    public function constructCadastro(){
+        return View('cadastro');
+    }
+
 }
 

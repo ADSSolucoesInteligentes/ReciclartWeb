@@ -4,9 +4,10 @@ body{
     overflow-x: hidden;
 }
 #imgLogo{
-    height: 50px;
+    height: 40px;
+    float: left;
     margin-left: 20px;
-    margin-top: 7px;
+    margin-top: 5px;
 }
 #navBar{
     background-color: #004d40;
@@ -14,11 +15,19 @@ body{
 body::-webkit-scrollbar {
     width: 0px;               /* width of the entire scrollbar */
   }
-  
+
   body::-webkit-scrollbar-track {
     background: #9DBCD4;        /* color of the tracking area */
   }
-  
+
   body::-webkit-scrollbar-thumb {
     background-color: blue;    /* color of the scroll thumb */
   }
+  nav{
+      height: 50px;
+      padding: 0px;
+      margin: 0;
+  }
+nav ul li a{
+    height: 55px;
+}

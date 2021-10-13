@@ -1,0 +1,42 @@
+.content{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.identeLogo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.identeLogo img{
+    width: 30%;
+}
+.cadastroForm{
+    width: 50%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    width: 90%;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #D4ECCC;
+}
+.row{
+    width: 80%;
+    margin: 0;
+}
+footer{
+    margin-left: 20px;
+    margin-bottom: 5px;
+}

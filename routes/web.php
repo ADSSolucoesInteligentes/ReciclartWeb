@@ -16,3 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/Login', 'HomeController@constructLogin')->name('login');
+
+Route::get('/Cadastro', 'HomeController@constructCadastro')->name('cadastro');
+
+Route::post('/Cadastro', 'UsuariosController@novoUsuario')->name('cadastro');
+
+Route::post('/login', 'UsuariosController@login')->name('login');

@@ -176,10 +176,10 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
-         *L5 repository disponivel em 
-         *https://github.com/andersao/l5-repository 
+         *L5 repository disponivel em
+         *https://github.com/andersao/l5-repository
         */
-        Prettus\Repository\Providers\RepositoryServiceProvider::class, 
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
     ],
 
