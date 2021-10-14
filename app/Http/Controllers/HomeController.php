@@ -19,5 +19,13 @@ class HomeController extends Controller
         return View('cadastro');
     }
 
+    public function constructDetalhes(){
+        return View('detalhes', ['usuario' => \Session::get('usuario')]);
+    }
+
+    public function constructHome(){
+        return View('home', ['usuario' => \Session::get('usuario')]);
+    }
+
 }
 

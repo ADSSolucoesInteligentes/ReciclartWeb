@@ -27,17 +27,17 @@ class UsuariosController extends Controller
         $request = $request->all();
 
         try {
-            $usuario = \DB::table('usuarios')->select('nome')
+            $usuario = \DB::table('usuarios')->select('*')
                 ->where('email', '=', $request['email'])
                 ->where('senha', '=', md5($request['senha']))
                 ->get();
-            $_SESSION['usuario'] = $usuario;
-            $response = $usuario;
+            \Session::put('usuario', $usuario[0]);
+            $response = $usuario[0]->idUsuario;
         }catch (\Exception $exception){
             $response = $exception->getMessage();
         }
 
-        return View('home', ['response' => $response]);
+        return redirect('home');
 
     }
 

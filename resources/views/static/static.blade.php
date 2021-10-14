@@ -17,10 +17,17 @@
           <img id="imgLogo" src="./img/logoReciclart.png" alt="">
       </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="">Home</a></li>
-        <li><a href="">Sobre nós</a></li>
-        <li><a href="{{route('cadastro')}}">Criar conta</a></li>
-        <li><a href="{{route('login')}}">Login</a></li>
+
+          @if(!isset($usuario))
+            <li><a href="">Sobre nós</a></li>
+            <li><a href="{{route('cadastro')}}">Criar conta</a></li>
+            <li><a href="{{route('login')}}">Login</a></li>
+          @else
+            <li><a href="">Home</a></li>
+            <li><a href="">Cadastrar material</a></li>
+            <li><a href="">Solicitar material</a></li>
+            <li><a href="{{route('detalhesConta')}}">{{$usuario->nome}}</a></li>
+          @endif
       </ul>
     </div>
 </nav>

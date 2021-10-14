@@ -15,9 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Login', 'HomeController@constructLogin')->name('login');
+Route::get('/login', 'HomeController@constructLogin')->name('login');
 
 Route::get('/Cadastro', 'HomeController@constructCadastro')->name('cadastro');
+
+Route::get('/Detalhes', 'HomeController@constructDetalhes')->name('detalhesConta');
+
+Route::get('/home', 'HomeController@constructHome')->name('home');
 
 Route::post('/Cadastro', 'UsuariosController@novoUsuario')->name('cadastro');
 

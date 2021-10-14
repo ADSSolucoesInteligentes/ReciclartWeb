@@ -1,1 +1,5 @@
-<h1>{{$response}}</h1>
+@extends('static.static')
+
+@section('content')
+
+@endsection
