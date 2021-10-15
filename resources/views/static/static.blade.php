@@ -23,9 +23,9 @@
             <li><a href="{{route('cadastro')}}">Criar conta</a></li>
             <li><a href="{{route('login')}}">Login</a></li>
           @else
-            <li><a href="">Home</a></li>
-            <li><a href="">Cadastrar material</a></li>
-            <li><a href="">Solicitar material</a></li>
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('cadastroMaterial') }}">Cadastrar material</a></li>
+            <li><a href="{{ route('solicitacaoMaterial') }}">Solicitar material</a></li>
             <li><a href="{{route('detalhesConta')}}">{{$usuario->nome}}</a></li>
           @endif
       </ul>

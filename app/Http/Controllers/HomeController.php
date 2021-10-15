@@ -27,5 +27,13 @@ class HomeController extends Controller
         return View('home', ['usuario' => \Session::get('usuario')]);
     }
 
+    public function constructCadMaterial(){
+        return View('cadastroMaterial', ['usuario' => \Session::get('usuario')]);
+    }
+
+    public function constructSoliMatrerial(){
+        return View('solicitacaoMaterial', ['usuario' => \Session::get('usuario')]);
+    }
+
 }
 

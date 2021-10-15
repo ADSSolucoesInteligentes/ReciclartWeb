@@ -23,6 +23,10 @@ Route::get('/Detalhes', 'HomeController@constructDetalhes')->name('detalhesConta
 
 Route::get('/home', 'HomeController@constructHome')->name('home');
 
+Route::get('/cadastroMaterial', 'HomeController@constructCadMaterial')->name('cadastroMaterial');
+
+Route::get('/solicitacaoMaterial', 'HomeController@constructSoliMatrerial')->name('solicitacaoMaterial');
+
 Route::post('/Cadastro', 'UsuariosController@novoUsuario')->name('cadastro');
 
 Route::post('/login', 'UsuariosController@login')->name('login');
