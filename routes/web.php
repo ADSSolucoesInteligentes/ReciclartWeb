@@ -30,3 +30,4 @@ Route::get('/solicitacaoMaterial', 'HomeController@constructSoliMatrerial')->nam
 Route::post('/Cadastro', 'UsuariosController@novoUsuario')->name('cadastro');
 
 Route::post('/login', 'UsuariosController@login')->name('login');
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\MateriaiCreateRequest;
@@ -19,6 +20,35 @@ use App\Validators\MateriaiValidator;
  */
 class MateriaisController extends Controller
 {
+
+
+    public function cadastrarMaterial(Request $request){
+        $request = $request->all();
+
+        try {
+            $usuario = \Session::get['usuario'];
+            DB::table('materiais')->insert([
+                'codPessoa' => $usuario->idUsuario,
+                'tipo' => $request['tipo'],
+                'quantidade' => $request['quantidade'],
+                'sitiacaoMaterial' => $request['situacaoMaterial'],
+                'created_at' => now(),
+            ]);
+            $resposta = "sucesso";
+            $erro = null;
+        }catch (\Exception $exception){
+            $resposta = "falha";
+            $erro = $exception->getMessage();
+        }
+
+        $return = array('resposta' => $resposta, 'erro' => $erro);
+
+        return json_encode($return);
+
+    }
+
+
+
     /**
      * @var MateriaiRepository
      */

@@ -26,6 +26,8 @@
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('cadastroMaterial') }}">Cadastrar material</a></li>
             <li><a href="{{ route('solicitacaoMaterial') }}">Solicitar material</a></li>
+              <li><a href="{{ route('cadastroMaterial') }}">Materiais cadastrados</a></li>
+              <li><a href="{{ route('solicitacaoMaterial') }}">Minhas solicitações</a></li>
             <li><a href="{{route('detalhesConta')}}">{{$usuario->nome}}</a></li>
           @endif
       </ul>

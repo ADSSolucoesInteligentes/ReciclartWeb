@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\PedidoCreateRequest;
@@ -19,6 +20,40 @@ use App\Validators\PedidoValidator;
  */
 class PedidosController extends Controller
 {
+
+    public function gerarPedido(Request $request){
+        $request = $request->all();
+
+        try {
+            $material = DB::table('materiais')->select('*')
+                ->where('tipo', '=', $request['tipo'])
+                ->get();
+
+            $usuario = \Session::get('usuario');
+
+            DB::table('pedidos')->insert([
+               'codMaterial' => $material->codMaterial,
+                'codPessoa_solicitante' => $usuario['idUsuario'],
+                'codPessoa_fornecedor' =>  $material['codPessoa'],
+                'dataHoraAgndamento' => $request['dataHoraAgendamento'],
+                'dataRetirada' => $request['dataRetirada'],
+                'dataCancelamento' => null,
+                'situacaoPedido' => 'pi',
+                'created_at' => now(),
+            ]);
+
+            $erro = null;
+            $resposta = 'sucesso';
+
+        }catch (\Exception $e){
+            $erro = $e->getMessage();
+            $resposta = "falha";
+        }
+
+        $return = array('resposta' => $resposta, 'erro' => $erro);
+        return json_encode($return);
+    }
+
     /**
      * @var PedidoRepository
      */

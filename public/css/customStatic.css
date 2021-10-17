@@ -2,6 +2,8 @@ body{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    background-color: black;
+    color: white;
 }
 #imgLogo{
     height: 40px;
@@ -30,4 +32,10 @@ body::-webkit-scrollbar {
   }
 nav ul li a{
     height: 55px;
+}
+input{
+    color: white!important;
+}
+input:focus{
+    border-bottom-color: #01FB2F!important;
 }
