@@ -31,3 +31,8 @@ Route::post('/Cadastro', 'UsuariosController@novoUsuario')->name('cadastro');
 
 Route::post('/login', 'UsuariosController@login')->name('login');
 
+Route::post('/postMaterial', 'MateriaisController@cadastrarMaterial');
+
+Route::post('/upPessoa', 'PessoasController@setDados');
+
+Route::post('/gerarPedido', 'pedidosController@gerarPedido');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\PessoaCreateRequest;
@@ -19,6 +20,37 @@ use App\Validators\PessoaValidator;
  */
 class PessoasController extends Controller
 {
+
+    public function setDados(Request $request){
+        $request = $request->all();
+        $usuario = \Session::get('usuario');
+        try{
+            DB::table('pessoas')->insert([
+                'idUsuario' => $usuario->idUsuario,
+                'cpf_cnpj' => $request['cpfCnpj'],
+                'tipo' => $request['pessoa'],
+                'ramo' => $request['ramo'],
+                'logradouro' => $request['logradouro'],
+                'numero' => $request['numero'],
+                'bairro' => $request['bairro'],
+                'ciadade' => $request['cidade'],
+                'uf' => $request['uf'],
+                'retira' => $request['retira'],
+                'created_at' => now(),
+            ]);
+            $response = "Sucesso";
+            $erro = null;
+        }catch(\Exception $exception){
+            $response = "Falhou";
+            $erro = $exception->getMessage();
+        }
+
+        $return = array('response' => $response, 'erro' => $erro);
+
+        echo json_encode($return);
+
+    }
+
     /**
      * @var PessoaRepository
      */

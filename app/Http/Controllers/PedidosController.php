@@ -26,20 +26,26 @@ class PedidosController extends Controller
 
         try {
             $material = DB::table('materiais')->select('*')
-                ->where('tipo', '=', $request['tipo'])
+                ->where('codMaterial', '=', $request['id'])
                 ->get();
 
             $usuario = \Session::get('usuario');
 
             DB::table('pedidos')->insert([
-               'codMaterial' => $material->codMaterial,
-                'codPessoa_solicitante' => $usuario['idUsuario'],
-                'codPessoa_fornecedor' =>  $material['codPessoa'],
-                'dataHoraAgndamento' => $request['dataHoraAgendamento'],
-                'dataRetirada' => $request['dataRetirada'],
-                'dataCancelamento' => null,
+               'codMaterial' => $material[0]->codMaterial,
+                'codPessoa_solicitante' => $usuario->idUsuario,
+                'codPessoa_fornecedor' =>  $material[0]->codPessoa,
+                'dataHoraAgndamento' => now(),
+                'dataRetirada' => now(),
+                'dataCancelamento' => now(),
                 'situacaoPedido' => 'pi',
                 'created_at' => now(),
+            ]);
+
+            DB::table('materiais')
+                ->where('codMaterial', '=', $material[0]->codMaterial)
+                ->update([
+                'situacaoMaterial' => "solicitado",
             ]);
 
             $erro = null;

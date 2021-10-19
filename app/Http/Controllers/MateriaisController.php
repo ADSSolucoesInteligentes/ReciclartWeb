@@ -26,12 +26,12 @@ class MateriaisController extends Controller
         $request = $request->all();
 
         try {
-            $usuario = \Session::get['usuario'];
+            $usuario = \Session::get('usuario');
             DB::table('materiais')->insert([
                 'codPessoa' => $usuario->idUsuario,
                 'tipo' => $request['tipo'],
                 'quantidade' => $request['quantidade'],
-                'sitiacaoMaterial' => $request['situacaoMaterial'],
+                'situacaoMaterial' => $request['situacaoMaterial'],
                 'created_at' => now(),
             ]);
             $resposta = "sucesso";
@@ -43,7 +43,7 @@ class MateriaisController extends Controller
 
         $return = array('resposta' => $resposta, 'erro' => $erro);
 
-        return json_encode($return);
+        echo json_encode($return);
 
     }
 

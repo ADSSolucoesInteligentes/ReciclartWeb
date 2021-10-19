@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link rel="stylesheet" href="css/customStatic.css">
-    <script src="ja/jquery-3.60.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <title>ReciclArt</title>
 </head>

@@ -54,12 +54,20 @@ class UsuariosController extends Controller
                     'nome' => $request['nome'],
                 ]
             );
+
+            $usuario = \DB::table('usuarios')->select('*')
+                ->where('email', '=', $request['email'])
+                ->where('senha', '=', md5($request['senha']))
+                ->get();
+
+            \Session::put('usuario', $usuario[0]);
+
             $response = "Bem vindo " . $request['nome'] . "!";
         }catch (\Exception $exception){
             $response = $exception->getMessage();
         }
 
-        return View('home', ['response' => $response]);
+        return redirect('home');
 
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -32,7 +33,8 @@ class HomeController extends Controller
     }
 
     public function constructSoliMatrerial(){
-        return View('solicitacaoMaterial', ['usuario' => \Session::get('usuario')]);
+        $materiais = DB::table('materiais')->select('*')->where('situacaoMaterial', '!=', 'solicitado')->get();
+        return View('solicitacaoMaterial', ['usuario' => \Session::get('usuario'), 'materiais' => $materiais]);
     }
 
 }
